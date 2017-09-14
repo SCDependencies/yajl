@@ -1,0 +1,7 @@
+AUTOMATED PROCESS FOR AMI 2017:
+
+$ cd <...>/yajl/rpm
+$ ./AMI2017.pre.build.sh
+$ ./build.sh
+(then see the tarball in ~/rpmbuild/RPMS/<arch>)
+

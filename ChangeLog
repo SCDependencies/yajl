@@ -1,4 +1,5 @@
 2.1.0
+     * @alvid - add scripts to build RPM fo AMI Linux
      * @nonodename, @patperry - fixed some compiler warnings
      * @yep, @emaste - documentation improvements
      * @sgravrock - build fix for NetBSD (and whenever sh != bash)
