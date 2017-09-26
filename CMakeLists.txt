@@ -23,6 +23,7 @@ SET (YAJL_MICRO 1)
 SET (PKG_NAME "yajl")
 SET (VERSION "${YAJL_MAJOR}.${YAJL_MINOR}.${YAJL_MICRO}")
 SET (YAJL_DIST_NAME "${PKG_NAME}-${VERSION}")
+SET (YAJL_TAG_NAME "${YAJL_MAJOR}.${YAJL_MINOR}")
 
 IF (NOT CMAKE_BUILD_TYPE)
   SET(CMAKE_BUILD_TYPE "Release")
@@ -114,7 +115,7 @@ include(CPack)
 # source tar ball
 add_custom_command(
         OUTPUT ${PKG_NAME}-${CPACK_PACKAGE_VERSION}.tar.gz
-        COMMAND git archive --format=tar --prefix=${PKG_NAME}-${CPACK_PACKAGE_VERSION}/ HEAD | gzip -c > ${CMAKE_CURRENT_BINARY_DIR}/${PKG_NAME}-${CPACK_PACKAGE_VERSION}.tar.gz
+        COMMAND git archive --format=tar --prefix=${PKG_NAME}-${CPACK_PACKAGE_VERSION}/ ${YAJL_TAG_NAME} | gzip -c > ${CMAKE_CURRENT_BINARY_DIR}/${PKG_NAME}-${CPACK_PACKAGE_VERSION}.tar.gz
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 add_custom_target(
